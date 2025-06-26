@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+body 
+{
+    font-family: "Quicksand", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header,footer
+{
+    background-color: rgb(87, 172, 135);
+    color: rgb(226, 255, 243);
+    text-align: center;
+    padding: 16px;
+    justify-content: center;
+
+}
+
+nav ul /*crea una barra de navegación horizontal con un fondo azul y sin viñetas
+*/
+{
+    margin-top: 0;
+    background-color: rgb(87, 172, 135);
+    height: 50px;/*Altura de la barra de navegación*/
+    display: flex;/*Permite que los elementos dentro se alineen horizontalmente*/
+    list-style-type: none;/*Quita los puntos*/
+    padding: 0;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li a /*Nav que cambia color de la letra y elimina subrayado predeterminado*/
+{
+    color: rgb(38, 107, 62);
+    text-decoration: none;
+}
+
+nav ul li /*Nav para acomodar los margenes*/
+{
+    margin: 0;/*Centra las letras en el nav (en el alto de nav)*/
+}
+
+main
+{
+    display: flex; /*permite que los elementos dentro se alineen y ajusten dinámicamente.*/
+    flex-wrap: wrap;/*- se acomoden en múltiples líneas si el espacio es insuficiente en la pantalla. Esto ayuda a la responsividad.*/
+    justify-content: space-around;
+    padding: 20px;/*evitar que el contenido se pegue a los bordes.*/
+}
+section
+{
+    flex: 2;
+    
+}
+
+aside
+{
+    flex: 1;
+    background-color: rgb(203, 232, 73);
+    padding: 10px;
+}
+
+.nave 
+{
+    background-color: rgb(87, 172, 135);
+    color: rgb(226, 255, 243);
+    text-align: center;
+    padding: 0 16px;           /* Menos padding lateral para mejor centrado */
+    display: flex;
+    justify-content: center;   /* Centra horizontalmente */
+    align-items: center;       /* Centra verticalmente */
+    height: 50px;
+    transition: transform 0.3s;
+    width: 100px;          /* Ancho fijo para el div */
+    border-radius: 10px; /* Bordes redondeados */
+} 
+
+.nave:hover
+{
+    transform: scale(1.08);    /* Agranda el div al hacer hover */
+    background-color: azure;
+    border-style: dashed;
+    border-color: rgb(2, 134, 92);
+}
+
+.cont
+{
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    height: 200px; /* Ocupa toda la altura de la ventana */
+    width: 250px; /* Ancho fijo para el div */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.cont:hover
+{
+    transform: scale(1.05); /* Agranda el div al hacer hover */
+    background-color: rgb(203, 232, 73);
+    border-style: dashed;
+    border-color: rgb(2, 134, 92);
+    translate: 0 10px; /* Desplaza el div hacia abajo al hacer hover */
+    transition: transform 0.3s, translate 0.3s; /* Añade transición suave */
+}
