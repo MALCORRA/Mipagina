@@ -91,8 +91,6 @@ aside
     flex-direction: column; /* Alinea los elementos en una columna */
     align-items: center; /* Centra los elementos horizontalmente */
     justify-content: center; /* Centra los elementos verticalmente */
-    height: 200px; /* Ocupa toda la altura de la ventana */
-    width: 250px; /* Ancho fijo para el div */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
 }
@@ -100,9 +98,6 @@ aside
 .cont:hover
 {
     transform: scale(1.05); /* Agranda el div al hacer hover */
-    background-color: rgb(203, 232, 73);
-    border-style: dashed;
-    border-color: rgb(2, 134, 92);
     translate: 0 10px; /* Desplaza el div hacia abajo al hacer hover */
     transition: transform 0.3s, translate 0.3s; /* Añade transición suave */
 }
