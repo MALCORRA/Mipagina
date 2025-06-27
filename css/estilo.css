@@ -5,9 +5,11 @@ body
     font-family: "Quicksand", sans-serif;
     margin: 0;
     padding: 0;
+    background-color:  rgb(217, 255, 239);
+    color: rgb(23, 99, 50);
 }
 
-header,footer
+footer
 {
     background-color: rgb(87, 172, 135);
     color: rgb(226, 255, 243);
@@ -17,11 +19,31 @@ header,footer
 
 }
 
+header
+{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background-color: rgb(87, 172, 135); /* asegúrate de tener color*/
+    color: rgb(226, 255, 243);
+    text-align: center;
+    padding: 16px;
+    justify-content: center;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgb(87, 172, 135); /* Igual que header y nave*/
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 nav ul /*crea una barra de navegación horizontal con un fondo azul y sin viñetas
 */
 {
     margin-top: 0;
-    background-color: rgb(87, 172, 135);
     height: 50px;/*Altura de la barra de navegación*/
     display: flex;/*Permite que los elementos dentro se alineen horizontalmente*/
     list-style-type: none;/*Quita los puntos*/
@@ -42,17 +64,9 @@ nav ul li /*Nav para acomodar los margenes*/
     margin: 0;/*Centra las letras en el nav (en el alto de nav)*/
 }
 
-main
-{
-    display: flex; /*permite que los elementos dentro se alineen y ajusten dinámicamente.*/
-    flex-wrap: wrap;/*- se acomoden en múltiples líneas si el espacio es insuficiente en la pantalla. Esto ayuda a la responsividad.*/
-    justify-content: space-around;
-    padding: 20px;/*evitar que el contenido se pegue a los bordes.*/
-}
 
 .nave 
 {
-    background-color: rgb(87, 172, 135);
     color: rgb(226, 255, 243);
     text-align: center;
     padding: 0 16px;           /* Menos padding lateral para mejor centrado */
@@ -73,7 +87,7 @@ main
     border-color: rgb(2, 134, 92);
 }
 
-section
+.song
 {
     flex: 2; /* Permite que el div ocupe el doble de espacio que los otros elementos */
     margin: 10px;
@@ -99,14 +113,51 @@ section
     transition: transform 0.3s, translate 0.3s; /* Añade transición suave */
 }
 
+section
+{
+    flex: 1; /* Permite que el div ocupe el mismo espacio que los otros elementos */
+    margin: 10px;
+    width: 100%; /* Ancho completo del contenedor */
+    text-align: justify;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+}
+.info section {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.listas
+{
+    display: flex; /*permite que los elementos dentro se alineen y ajusten dinámicamente.*/
+}
+
+.container 
+{
+    max-width: 1500px; /* o el ancho que prefieras */
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
 @media (max-width: 900px) {
     main {
         flex-direction: column;
         align-items: center;
     }
+    .listas {
+        flex-direction: column; /* Apila los hijos verticalmente */
+        align-items: center;    /* Centra los hijos horizontalmente */
+    }
     section {
         width: 100%;
-        max-width: 500px; /* Opcional: limita el ancho de cada sección */
+        max-width: 500px;
     }
     .spot iframe {
         height: 200px;
