@@ -1,11 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
+
+
+html 
+{
+    scroll-padding-top: 50px; /* igual a la altura de tu nav */
+}
+
 body 
 {
     font-family: "Quicksand", sans-serif;
     margin: 0;
     padding: 0;
-    background-color:  rgb(217, 255, 239);
+    background-color: rgb(226, 255, 243);
     color: rgb(23, 99, 50);
 }
 
@@ -30,12 +37,12 @@ header
     justify-content: center;
 }
 
-nav {
+nav 
+{
     position: sticky;
     top: 0;
     z-index: 100;
     background-color: rgb(87, 172, 135); /* Igual que header y nave*/
-    margin-top: 0;
     margin-bottom: 0;
     padding-bottom: 0;
 }
@@ -55,8 +62,8 @@ nav ul /*crea una barra de navegación horizontal con un fondo azul y sin viñet
 
 nav ul li a /*Nav que cambia color de la letra y elimina subrayado predeterminado*/
 {
-    color: rgb(38, 107, 62);
     text-decoration: none;
+    color: azure;
 }
 
 nav ul li /*Nav para acomodar los margenes*/
@@ -67,7 +74,6 @@ nav ul li /*Nav para acomodar los margenes*/
 
 .nave 
 {
-    color: rgb(226, 255, 243);
     text-align: center;
     padding: 0 16px;           /* Menos padding lateral para mejor centrado */
     display: flex;
@@ -82,9 +88,13 @@ nav ul li /*Nav para acomodar los margenes*/
 .nave:hover
 {
     transform: scale(1.08);    /* Agranda el div al hacer hover */
-    background-color: azure;
-    border-style: dashed;
-    border-color: rgb(2, 134, 92);
+    background-color: azure; /* Cambia el color de fondo al hacer hover */
+    transition: transform 0.3s, background-color 0.3s, color 0.3s; /* Añade transición suave */
+}
+
+.nave:hover a 
+{
+    color: rgb(2, 134, 92);
 }
 
 .song
@@ -146,6 +156,34 @@ section
     padding-right: 24px;
 }
 
+.galeria 
+{
+display: grid;
+grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+gap: 15px;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.galeria img 
+{
+width: 100%;
+height: 200px; /* Altura fija para todas las imágenes */
+border-radius: 8px;
+object-fit: cover;
+box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.galeria img:hover 
+{
+    transform: scale(2.05); /* Agranda la imagen al hacer hover */
+    transition: transform 0.5s; /* Añade una transición suave */
+    border: 2px solid azure;
+    border-radius: 10px; /* Bordes redondeados al hacer hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hacer hover */
+}
+
+
 @media (max-width: 900px) {
     main {
         flex-direction: column;
@@ -164,3 +202,4 @@ section
         max-width: 100vw;
     }
 }
+
